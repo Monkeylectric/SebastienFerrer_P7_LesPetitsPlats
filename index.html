@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les petits plats</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./main.js"></script>
+</head>
+<body>
+    <header>
+        <img alt="Logo du site" class="logo" src="./logo.png">
+    </header>
+    <main>
+        <div id="search">
+            <input id="search_field" type="search" placeholder="Rechercher un ingrédient, appareil, ustensile ou une recette">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <div id="chosed_filter"></div>
+
+        <div id="filters_list">
+            <div class="filter_type" id="ingredients">
+                <button class="filter_btn" id="ingredients_btn">Ingrédients<i class="fas fa-chevron-down filter_chevron"></i></button>
+                <div class="filter_search" id="ingredients_search">
+                    <div class="filter_search_input">
+                        <input type="text" class="filter_field" id="ingredients_field" placeholder="Rechercher un ingrédient">
+                        <div class="close_filter filter_chevron">
+                            <i class="fas fa-chevron-up filter_chevron_open"></i>
+                        </div>
+                    </div>
+                    <ul class="filter_list" id="ingredients_filter_list"></ul>
+                </div>
+            </div>
+            <div class="filter_type" id="appliances">
+                <button class="filter_btn" id="appliances_btn">Appareils<i class="fas fa-chevron-down filter_chevron"></i></button>
+                <div class="filter_search" id="appliances_search">
+                    <div class="filter_search_input">
+                        <input type="text" class="filter_field" id="champ-appliance" placeholder="Rechercher un appareil">
+                        <div class="close_filter filter_chevron">
+                            <i class="fas fa-chevron-up filter_chevron_open"></i>
+                        </div>
+                    </div>
+                    <ul class="filter_list" id="appliance_filter_list"></ul>
+                </div>
+            </div>
+            <div class="filter_type" id="ustensiles">
+                <button class="filter_btn" id="ustensils_btn">Ustensiles<i class="fas fa-chevron-down filter_chevron"></i></button>
+                <div class="filter_search" id="ustensils_search">
+                    <div class="filter_search_input">
+                        <input type="text" class="filter_field" id="champ-ustensils" placeholder="Rechercher un ustensile">
+                        <div class="close_filter filter_chevron">
+                            <i class="fas fa-chevron-up filter_chevron_open"></i>
+                        </div>
+                    </div>
+                    <ul class="filter_list" id="ustensils_filter_list"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="recipes_list"></div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+html,
+body {
+    margin: 20px 100px;
+    padding: 0;
+}
+
+* {
+    font-family: "Lato", sans-serif;
+}
+
+/* --------- Header --------- */
+.logo {
+    display: block;
+    margin: auto;
+    height: 10vh;
+}
+
+/* --------- Recherche --------- */
+#search {
+    margin: 20px 0;
+    position: relative;
+}
+#search_field {
+    background-color: #e7e7e7;
+    border-color: transparent;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 20px;
+    height: 65px;
+    padding: 25px 20px;
+    width: 100%;
+}
+#search_field:placeholder-shown {
+    text-overflow: ellipsis;
+}
+#search_field::-webkit-search-cancel-button {
+    display: none;
+}
+.fa-search {
+    cursor: pointer;
+    font-size: 32px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* --------- Filtre --------- */
+.filter {
+    border-radius: 5px;
+    color: #ffffff;
+    display: inline-block;
+    line-height: 30px;
+    min-height: 30px;
+    min-width: 100px;
+    margin: 0 10px 10px 0;
+    padding: 10px 20px;
+    position: relative;
+}
+.filter:first-letter {
+    text-transform: capitalize;
+}
+.fa-times-circle {
+    float: right;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 10px;
+}
+.fa-times-circle:hover {
+    cursor: pointer;
+}
+
+/* --------- Liste des filtres --------- */
+#filters_list {
+    display: flex;
+    /* margin: 20px 0; */
+    position: absolute;
+}
+/* --------- Type de filtre --------- */
+.filter_type {
+    position: relative;
+    border-radius: 5px;
+    display: flex;
+}
+/* --------- Boutons --------- */
+.filter_btn {
+    border-color: transparent;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 20px;
+    height: 65px;
+    margin-right: 20px;
+    padding: 0 10px;
+    position: relative;
+    text-align: left;
+    width: 250px;
+}
+.filter_btn:hover {
+    cursor: pointer;
+}
+.btn-afficher {
+    display: block;
+}
+.btn-cacher {
+    display: none;
+}
+/* --------- Chevron --------- */
+.filter_chevron {
+    color: #ffffff;
+    font-size: 18px;
+    margin-left: 5px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.filter_chevron:hover {
+    cursor: pointer;
+}
+/* --------- Reherche dans les filtres --------- */
+.filter_search {
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    margin-right: 20px;
+    min-width: 250px;
+    padding: 0 10px;
+    width: 100%;
+}
+.filter_search > .filter_search_input {
+    position: relative;
+}
+.hide_filter_search {
+    display: none;
+}
+.display_filter_search {
+    display: flex;
+}
+/* --------- Champs des filtres --------- */
+.filter_field {
+    border-color: transparent;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-size: 15px;
+    height: 65px;
+    width: 90%;
+}
+.filter_field::placeholder {
+    color: #ffffff;
+    opacity: .7;
+}
+.filter_field:focus {
+    outline: none;
+}
+/* --------- Liste des filtres --------- */
+.filter_list {
+    columns: 3;
+    height: fit-content;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 15px 0;
+    z-index: 99;
+}
+#ingredients_filter_list {
+    background-color: #3282f7;
+}
+#appliance_filter_list {
+    background-color: #68d9a4;
+}
+#ustensils_filter_list {
+    background-color: #ed6454;
+}
+.filter_name {
+    color: #ffffff;
+}
+.filter_name:hover {
+    cursor: pointer;
+}
+.filter_name:first-letter {
+    text-transform: capitalize;
+}
+/* --------- Ingrédients --------- */
+#ingredients_btn,
+#ingredients_search,
+#ingredients_field,
+.ingredients_filter {
+    background-color: #3282f7;
+}
+/* --------- Appareils --------- */
+#appliances_btn,
+#appliances_search,
+#champ-appliance,
+.appliance_filter {
+    background-color: #68d9a4;
+}
+/* --------- Ustensiles --------- */
+#ustensils_btn,
+#ustensils_search,
+#champ-ustensils,
+.ustensils_filter {
+    background-color: #ed6454;
+}
+
+
+/* --------- Aucun résultat --------- */
+#recipe_empty {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+}
+/* --------- Liste des recettes --------- */
+#recipes_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 100px;
+}
+.recipe {
+    background-color: #e7e7e7;
+    border-radius: 0 0 5px 5px;
+    flex: 1 0 calc((100% - 100px) / 3);
+    max-width: calc((100% - 100px) / 3);
+    padding-bottom: 15px;
+}
+/* --------- Image recette --------- */
+.recipe_img {
+    background-color: #c7bebe;
+    border-radius: 5px 5px 0 0;
+    height: 200px;
+}
+/* --------- Contenu de la recette --------- */
+.recipe_content {
+    background-color: #e7e7e7;
+    border-radius: 0 0 5px 5px;
+    padding: 20px;
+}
+/* --------- Titre du recette --------- */
+.recipe_title {
+    display: inline-block;
+    font-size: 20px;
+    margin: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: calc(100% - 40px - 25%);
+}
+/* --------- Temps de préparation --------- */
+.preparation_time {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    width: 25%;
+}
+.preparation_time::before {
+    content: "\f017";
+    font-family: "Font Awesome\ 5 Free";
+    font-size: 20px;
+    font-weight: lighter;
+    margin-right: 5px;
+}
+.preparation_time::after {
+    content: " min";
+}
+/* --------- Liste d'ingrédient --------- */
+.ingredients_list {
+    float: left;
+    margin: 20px 10px 0 0;
+    width: calc(50% - 10px);
+}
+.ingredient_type {
+    display: block;
+    font-weight: bold;
+}
+.ingredient_number {
+    font-weight: normal;
+}
+.ingredient_number::before {
+    content: " : ";
+}
+/* --------- Description de la recette --------- */
+.recipe_description {
+    float: right;
+    width: 50%;
+}
+.recipe_description > p {
+    display: -webkit-box;
+    margin: 20px 0 0 0;
+    overflow: hidden;
+    text-align: justify;
+    text-overflow: ellipsis;
+    width: 100%;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+
+/* --------- Responsive --------- */
+@media screen and (max-width: 1650px) {
+    html,
+    body {
+        margin: 20px 50px;
+    }
+    .recipe_title {
+        font-size: 18px;
+        float: unset;
+        width: unset;
+    }
+    .preparation_time {
+        font-size: 16px;
+        width: unset;
+    }
+    .preparation_time::before {
+        font-size: 15px;
+    }
+    .ingredients_list {
+        width: 100%;
+    }
+    .recipe_description {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    html,
+    body {
+        margin: 20px 25px;
+    }
+    .recipe_title {
+        font-size: 16px;
+    }
+    .preparation_time {
+        font-size: 15px;
+    }
+    .preparation_time::before {
+        font-size: 14px;
+    }
+    .ingredient_type {
+        font-size: 14px;
+    }
+    .recipe_description > p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    html,
+    body {
+        margin: 20px 10px;
+    }
+    #recipes_list {
+        gap: 25px;
+    }
+    .recipe_title {
+        display: block;
+        font-size: 20px;
+    }
+    .preparation_time {
+        display: block;
+        float: unset;
+        font-size: 18px;
+        margin-top: 5px;
+    }
+    .preparation_time::before {
+        font-size: 17px;
+    }
+    .ingredient_type {
+        font-size: 16px;
+    }
+    .recipe {
+        flex: 1 0 calc((100% - 100px) / 2);
+        max-width: 100%;
+    }
+    .recipe_description > p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .filter {
+        margin: 5px 0;
+        text-align: center;
+        width: calc(100% - 40px);
+    }
+    .fa-times-circle {
+        display: block;
+        float: unset;
+        font-size: 22px;
+        margin: auto;
+    }
+    #filters_list {
+        justify-content: center;
+    }
+    .filter_search {
+        margin-right: 0;
+        width: auto;
+    }
+    #recipes_list {
+        gap: 25px 0;
+    }
+    .recipe {
+        flex: 1 0 calc((100% - 100px) / 1);
+    }
+}
+
+@media screen and (max-width: 850px) {
+    #search_field {
+        font-size: 16px;
+    }
+    #filters_list {
+        flex-direction: column;
+    }
+    .filter_type {
+        display: block;
+        margin: 10px auto;
+        width: fit-content;
+    }
+    .filter_btn {
+        margin-right: unset;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .logo {
+        width: 268px;
+    }
+    #search_field {
+        font-size: 14px;
+    }
+    #search_field::-webkit-search-cancel-button {
+        display: block;
+    }
+    .fa-search {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    html,
+    body {
+        margin: 20px 5px;
+    }
+}

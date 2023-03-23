@@ -8,6 +8,9 @@ import { checkRecipes } from '../native/search.js';
 export let tagged_recipes = [];
 //let tagged_recipes_back = [];
 
+/**
+ * Ecouter sur les tags
+ */
 export function tagListener() {
     const all_filters = document.querySelectorAll(".filter_name");
 
@@ -25,6 +28,11 @@ export function tagListener() {
     });
 }
 
+/**
+ * Ajout du tag
+ * @param {String} type 
+ * @param {String} name 
+ */
 function addTag(type, name) {
     const id_name = kebabCase(name);
     const display_name = name.replaceAll("-", " ");
@@ -57,6 +65,11 @@ function addTag(type, name) {
     }
 }
 
+/**
+ * Suppression du tag
+ * @param {String} type 
+ * @param {String} name 
+ */
 function deleteTag(type, name) {
     const id_name = kebabCase(name);
     //console.log(target_id);

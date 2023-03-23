@@ -3,12 +3,16 @@ import { displayCards } from '../js/cards.js';
 import { displayFilters } from '../js/filter.js';
 import { tagged_recipes } from '../js/tag.js';
 
+/**
+ * Filtre les recettes
+ * @param {Array} recipes 
+ * @param {String} filter 
+ * @returns Le tableau des recettes trouvées
+ */
 export function checkRecipes(recipes, filter) {
     let find_recipes = [];
 
-    // some et every
-
-    recipes.forEach((recipe) => { // voir filter
+    recipes.forEach((recipe) => {
         //-- Verifie la recette
         if (normalizer(recipe.name).toLowerCase().trim().includes(filter.toLowerCase().trim())) {
             find_recipes.push(recipe);
@@ -26,7 +30,7 @@ export function checkRecipes(recipes, filter) {
         }
 
         //-- Verifie les ustensils
-        recipe.ustensils.forEach((ustensil) => { // voir filter
+        recipe.ustensils.forEach((ustensil) => {
             if (normalizer(ustensil).toLowerCase().includes(filter.toLowerCase())) {
                 find_recipes.push(recipe);
                 return;
@@ -34,7 +38,7 @@ export function checkRecipes(recipes, filter) {
         });
 
         //-- Verifie les ingredients
-        recipe.ingredients.forEach((ingredient) => { // voir filter
+        recipe.ingredients.forEach((ingredient) => {
             if (normalizer(ingredient.ingredient).toLowerCase().trim().includes(filter.toLowerCase().trim())) {
                 find_recipes.push(recipe);
                 return;
@@ -48,6 +52,10 @@ export function checkRecipes(recipes, filter) {
     return find_recipes;
 }
 
+/**
+ * Recherche sur l'input general
+ * @param {Array} recipes 
+ */
 export function generalSearch(recipes) {
     //-- Champ de recherche principal
     const field_searched = document.querySelector("#search_field");
@@ -83,6 +91,10 @@ export function generalSearch(recipes) {
     })
 }
 
+/**
+ * Recherche sur l'input des filtres (tags)
+ * @param {Array} recipes 
+ */
 export function filtersSearch(recipes) {
     const filters_search = document.querySelectorAll(".filter_field");
 

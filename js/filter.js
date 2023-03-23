@@ -1,6 +1,11 @@
 import { normalizer, kebabCase } from './utils.js';
 import { tagListener } from './tag.js';
 
+/**
+ * Rempli les listes des filtres
+ * @param {Array} recipes 
+ * @param {String} type 
+ */
 function fillFilter(recipes, type) {
     const filter_list      = document.getElementById(`${type}_filter_list`);
     const selected_filters = document.querySelectorAll(`[data-tag-type="${type}"]`);
@@ -52,6 +57,10 @@ function fillFilter(recipes, type) {
     });
 }
 
+/**
+ * Affiche les filtres
+ * @param {*} recipes 
+ */
 export function displayFilters(recipes) {
     fillFilter(recipes, "ingredients");
     fillFilter(recipes, "appliance");

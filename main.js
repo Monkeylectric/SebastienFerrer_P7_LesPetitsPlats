@@ -27,4 +27,3 @@ window.addEventListener("DOMContentLoaded", () => {
     generalSearch(recipes);
     filtersSearch(recipes);
 });
-

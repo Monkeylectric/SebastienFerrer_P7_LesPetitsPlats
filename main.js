@@ -2,8 +2,8 @@ import { recipes } from './data/recipes.js';
 import { openFilter, closeFilter } from './js/utils.js';
 import { displayCards } from './js/cards.js';
 import { displayFilters } from './js/filter.js';
-//import { generalSearch, filtersSearch } from './function/search.js';
-import { generalSearch, filtersSearch } from './native/search.js';
+import { generalSearch, filtersSearch } from './function/search.js';
+//import { generalSearch, filtersSearch } from './native/search.js';
 
 window.addEventListener("DOMContentLoaded", () => {
     displayCards(recipes);

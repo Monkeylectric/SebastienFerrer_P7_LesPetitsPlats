@@ -83,11 +83,13 @@ function deleteTag(type, name) {
 
         chosed_filters.forEach((tag, id) => {
             const tag_name = tag.dataset.tagName;
+            let tag_name_filter = tag_name.split("-");
+            tag_name_filter = tag_name_filter.join(" ");
 
             if (id > 0) {
-                recipes_tagged_find = checkRecipes(tagged_recipes, tag_name);
+                recipes_tagged_find = checkRecipes(tagged_recipes, tag_name_filter);
             } else {
-                recipes_tagged_find = checkRecipes(recipes, tag_name);
+                recipes_tagged_find = checkRecipes(recipes, tag_name_filter);
             }
             
             tagged_recipes = [...recipes_tagged_find];
